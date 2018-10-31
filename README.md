@@ -1,8 +1,7 @@
-# social_app
+<h1>Screenshots</h1>
 
-A new Flutter project.
+<img src="images/Social_App_1.jpg" width="540" />
+<img src="images/Social_App_2.jpg" width="540" />
 
-## Getting Started
-
-For help getting started with Flutter, view our online
+If you want to learn Flutter check it...
 [documentation](https://flutter.io/).
