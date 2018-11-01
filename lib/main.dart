@@ -31,18 +31,6 @@ class _SocialHomeState extends State<SocialHome> {
       length: 4,
       child: Scaffold(
         backgroundColor: Color(0xFF3D3F4B),
-        // appBar: AppBar(
-        //   backgroundColor: Color(0xFF363846),
-        //   elevation: 0.5,
-        //   title: Text(
-        //     'Home',
-        //     style: TextStyle(
-        //       color: Colors.white,
-        //       fontSize: 26.0,
-        //       fontWeight: FontWeight.bold,
-        //     ),
-        //   ),
-        // ),
         body: TabBarView(
           children: <Widget>[
             new HomePage(),
