@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/chats.dart';
-import 'package:social_app/home.dart';
+import 'package:social_app/data.dart';
+import 'package:social_app/login.dart';
+import 'package:social_app/main_page.dart';
 
 void main() => runApp(SocialApp());
 
 class SocialApp extends StatelessWidget {
+  final pages = <String, WidgetBuilder> {
+    LoginPage.tag: (context) => LoginPage(),
+    SocialHome.tag: (context) => SocialHome(),
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,54 +19,9 @@ class SocialApp extends StatelessWidget {
         fontFamily: 'Josefin',
         primarySwatch: Colors.indigo,
       ),
-      home: SocialHome(),
+      home: LoginPage(),
+      routes: pages,
     );
   }
 }
 
-class SocialHome extends StatefulWidget {
-  @override
-  _SocialHomeState createState() => _SocialHomeState();
-}
-
-class _SocialHomeState extends State<SocialHome> {
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        backgroundColor: Color(0xFF3D3F4B),
-        body: TabBarView(
-          children: <Widget>[
-            new HomePage(),
-            new ChatPage(),
-            new Container(color: Colors.green),
-            new Container(color: Colors.blue),
-          ],
-        ),
-        bottomNavigationBar: new TabBar(
-          indicatorWeight: 1.0,
-          tabs: [
-            Tab(
-              icon: Icon(Icons.home),
-            ),
-            Tab(
-              icon: Icon(Icons.chat_bubble),
-            ),
-            Tab(
-              icon: Icon(Icons.people),
-            ),
-            Tab(
-              icon: Icon(Icons.settings),
-            ),
-          ],
-          labelColor: Color(0xFF5791FB),
-          unselectedLabelColor: Colors.white30,
-          indicatorSize: TabBarIndicatorSize.tab,
-          indicatorPadding: EdgeInsets.all(5.0),
-          indicatorColor: Color(0xFF5791FB),
-        ),
-      ),
-    );
-  }
-}
